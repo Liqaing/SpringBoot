@@ -1,8 +1,26 @@
 package com.example.demo.student;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+// Mark student class as an entity in JPA, indicating that obj can be persisted to relation database, and represent a row in the table
+@Entity
+// Specified details of database table which entity is mapped to
+@Table
 public class Student {
+    // Use Id as primary key
+    // Use sequence generator to generator Id primary key
+    @Id
+    @SequenceGenerator(
+            name = "student_sequence",
+            sequenceName = "student_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "student_sequence"
+    )
     private int id;
     private String name;
     private Integer age;
