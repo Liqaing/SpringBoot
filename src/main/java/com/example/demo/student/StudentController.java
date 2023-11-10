@@ -17,9 +17,10 @@ public class StudentController {
     // Instant field store StudentService class reference
     private final StudentService studentService;
 
+    // Dependency injection: use autowired and service or component annotation. To late spring know to pass object here rather than create it manually
     @Autowired
     public StudentController(StudentService studentService) {
-        this.studentService = new StudentService();
+        this.studentService = studentService;
     }
 
     @GetMapping

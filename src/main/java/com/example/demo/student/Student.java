@@ -21,7 +21,7 @@ public class Student {
             strategy = GenerationType.SEQUENCE,
             generator = "student_sequence"
     )
-    private int id;
+    private Long id;
     private String name;
     private Integer age;
     private String email;
@@ -31,7 +31,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(int id, String name, Integer age, String email, LocalDate dob) {
+    public Student(Long id, String name, Integer age, String email, LocalDate dob) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -47,7 +47,7 @@ public class Student {
     }
 
     // Setter and getter
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -67,7 +67,7 @@ public class Student {
         return dob;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
